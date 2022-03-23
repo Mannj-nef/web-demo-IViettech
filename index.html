@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+      />
+    <link rel="stylesheet" href="./Asset/css/reset.css" />
+    <link rel="stylesheet" href="./Asset/css/base.css" />
+    <link rel="stylesheet" href="./Asset/css/style.css" />
+    <link rel="stylesheet" href="./Asset/css/respoonsive.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+      integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>iviettech.vn</title>
+  </head>
+
+  <body>
+    <div class="app">
+      <header class="header">
+        <div class="header-wrap_logo">
+          <a href="#">
+            <img
+              src="data:image/png;base64,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"
+              alt=""
+              class="header-logo"
+              ;
+            />
+          </a>
+
+          <div class="header-content">
+            <ul class="header-list_item">
+              <li class="header_item primary">
+                <a href="#" class="header-link">Trang chủ</a>
+
+                <i class="icon-down icon-header">
+                  <ion-icon name="chevron-down-outline"></ion-icon>
+                </i>
+              </li>
+              <li class="header_item">
+                <a href="#" class="header-link">Các khoá học lập trình</a>
+
+                <i class="icon-down icon-header">
+                  <ion-icon name="chevron-down-outline"></ion-icon>
+                </i>
+              </li>
+              <li class="header_item">
+                <a href="#" class="header-link">Đăng kí học</a>
+
+                <i class="icon-down icon-header">
+                  <ion-icon name="chevron-down-outline"></ion-icon>
+                </i>
+              </li>
+              <li class="header_item">
+                <a href="#" class="header-link">Việc làm</a>
+
+                <i class="icon-down icon-header">
+                  <ion-icon name="chevron-down-outline"></ion-icon>
+                </i>
+              </li>
+              <li class="header_item">
+                <a href="#" class="header-link">iVietTech</a>
+
+                <i class="icon-down icon-header">
+                  <ion-icon name="chevron-down-outline"></ion-icon>
+                </i>
+              </li>
+              <li class="header_item">
+                <a href="#" class="header-link">Trang Vàng HV</a>
+
+                <i class="icon-down icon-header">
+                  <ion-icon name="chevron-down-outline"></ion-icon>
+                </i>
+              </li>
+              <li class="header_item">
+                <a href="#" class="header-link">Blog</a>
+
+                <i class="icon-down icon-header">
+                  <ion-icon name="chevron-down-outline"></ion-icon>
+                </i>
+              </li>
+            </ul>
+
+            <div class="header-search">
+              <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            </div>
+
+            <div class="line-effect"></div>
+          </div>
+        </div>
+      </header>
+
+      <div class="banner-wrapp">
+        <a href="#" class="banner-link">
+          <img
+            src="https://iviettech.vn/wp-content/uploads/2021/09/iViettech-Web-Banner.jpg"
+            alt=""
+            class="banner-img"
+          />
+        </a>
+        <a href="#" class="banner-link">
+          <img
+            src="https://iviettech.vn/wp-content/uploads/2015/10/hoc-lap-trinhFILEminimizer.jpg"
+            alt=""
+            class="banner-img"
+          />
+        </a>
+      </div>
+
+      <div class="education">
+        <div class="education-content">
+          <div class="signing">
+            <div class="session-header">
+              <span class="icon-wrapp">
+                <i class="fa-solid fa-pen icon"></i>
+              </span>
+              <h2 class="session-title">Đăng kí học</h2>
+            </div>
+            <form action="#" class="signing-form">
+              <input
+                class="input-control"
+                type="text"
+                placeholder="Họ và tên"
+              />
+              <input class="input-control" type="email" placeholder="Email" />
+              <input
+                class="input-control"
+                type="text"
+                placeholder="Điện thoại"
+              />
+              <span class="course_select">
+                <input
+                  class="input-control btl"
+                  type="text"
+                  placeholder="Chọn khoá học"
+                />
+                <i class="icon-down icon-education">
+                  <ion-icon name="chevron-down-outline"></ion-icon>
+                </i>
+              </span>
+              <span class="signing-message">
+                <input
+                  class="input-control"
+                  type="text"
+                  placeholder="Lời nhắn của bạn"
+                />
+              </span>
+
+              <input
+                type="submit"
+                value="Đăng ký Học"
+                class="input-control input_submit"
+              />
+            </form>
+          </div>
+
+          <div class="program">
+            <div class="session-header program-header">
+              <a href="#" class="program-link">
+                <span class="icon-wrapp"
+                  ><i class="fa-solid fa-graduation-cap icon"></i
+                ></span>
+                <h2 class="session-title">Chương trình đào tạo</h2>
+              </a>
+              <div class="control-course">
+                <span class="courst-move program-prev">
+                  <i class="fa-solid fa-angle-left"></i>
+                </span>
+                <span class="courst-move program-next">
+                  <i class="fa-solid fa-angle-right"></i>
+                </span>
+              </div>
+            </div>
+
+            <div class="list_course">
+              <!-- <div class="course_item">
+                <a href="#" class="program-link">
+                  <div class="program-avata">
+                    <img
+                      src="https://iviettech.vn/wp-content/themes/viettech/timthumb.php?src=https://iviettech.vn/wp-content/uploads/2015/12/LTVCN-Logo.jpg&h=230&w=230&q=100"
+                      alt=""
+                      class="program-avata__img"
+                    />
+                  </div>
+                </a>
+                <div class="descript">
+                  <a href="#" class="program-link">
+                    <h3 class="program-title">Lập trình viên chuyên nghiệp</h3>
+                  </a>
+                  <div class="time-course">
+                    <p class="time">Thời gian: 8 tháng</p>
+                    <p class="time">Suất học: Tối 3-5-7</p>
+                  </div>
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="introduce">
+        <div class="introduce-wrapp">
+          <div class="introduce-content">
+            <div class="introduce-img">
+              <a href="#" class="introduce-link">
+                <img
+                  src="https://iviettech.vn/wp-content/uploads/2013/12/img-intro.jpg"
+                  alt=""
+                />
+              </a>
+            </div>
+
+            <div class="introduce-main">
+              <div class="introduce-logo">
+                <a href="#">
+                  <img
+                    src="data:image/png;base64,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"
+                    alt=""
+                    class="logo"
+                  />
+                </a>
+              </div>
+
+              <div class="introduce-main-content">
+                <h2 class="introduce-main-title">Giới thiệu!</h2>
+                <p class="introduce-main-dec">
+                  Trải qua nhiều năm làm việc trong ngành phần mềm, hiểu được
+                  thực trạng nhu cầu nhân lực của ngành, nhóm chuyên gia trong
+                  ngành đã thành lập Trung tâm đào tạo Lập trình viên chuyên
+                  nghiệp iVietTech với mong muốn thu hẹp khoảng cách giữa nhà
+                  trường và doanh nghiệp, tạo cơ hội việc làm cho các bạn trẻ
+                  đã, đang và sẽ theo học ngành CNTT.
+                </p>
+                <button class="btn btn-introduce">Xem thêm</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="introduce-connect">
+            <div class="connect-title-wrapp">
+              <a href="#">
+                <span class="icon-wrapp"
+                  ><i class="fa-solid fa-comment icon iconConnent"></i
+                ></span>
+                <h2 class="connect-title">Kết Nối Với Chúng Tôi</h2>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="schooling">
+        <div class="learn-calendar">
+          <div class="session-header schooling-header">
+            <a href="#" class="schooling-link">
+              <span class="icon-wrapp">
+                <i class="icon">
+                  <ion-icon name="calendar-outline"></ion-icon>
+                </i>
+              </span>
+              <h2 class="session-title schooling-title">Lịch khai giảng</h2>
+            </a>
+            <div class="control-course">
+              <!-- <span class="courst-move calendar-prev">
+                <i class="fa-solid fa-angle-left"></i>
+              </span>
+              <span class="courst-move calendar-next">
+                <i class="fa-solid fa-angle-right"></i>
+              </span> -->
+            </div>
+          </div>
+
+          <div class="schooling_course--wrapp">
+            <div class="list-course_wrapp">
+              <div class="schooling_list-course">
+                <div class="schooling_course-item">
+                  <a href="#">
+                    <img
+                      src="https://iviettech.vn/wp-content/uploads/2021/12/Node_logo.png"
+                      alt=""
+                      class="schooling-img"
+                    />
+                  </a>
+
+                  <div class="schooling_desc">
+                    <p>
+                      <a href="#" class="schooling_desc-link"
+                        >Lập trình Node.js</a
+                      >
+                    </p>
+                    <p>Ngày khai giảng: 14-03-2022</p>
+                    <p>Lịch học: 2-4-6</p>
+                  </div>
+                </div>
+              </div>
+              <div class="schooling_list-course">
+                <div class="schooling_course-item">
+                  <a href="#">
+                    <img
+                      src="https://iviettech.vn/wp-content/uploads/2015/12/LTVCN-Logo.jpg"
+                      alt=""
+                      class="schooling-img"
+                    />
+                  </a>
+
+                  <div class="schooling_desc">
+                    <p>
+                      <a href="#" class="schooling_desc-link"
+                        >Lập trình viên chuyên nghiệp</a
+                      >
+                    </p>
+                    <p>Ngày khai giảng: 22-03-2022</p>
+                    <p>Lịch học: Tối 3-5-7</p>
+                  </div>
+                </div>
+              </div>
+              <div class="schooling_list-course">
+                <div class="schooling_course-item">
+                  <a href="#">
+                    <img
+                      src="https://iviettech.vn/wp-content/uploads/2015/12/tester_logo.jpg"
+                      alt=""
+                      class="schooling-img"
+                    />
+                  </a>
+
+                  <div class="schooling_desc">
+                    <p>
+                      <a href="#" class="schooling_desc-link"
+                        >Kiểm thử phần mềm</a
+                      >
+                    </p>
+                    <p>Ngày khai giảng: 29-03-2022</p>
+                    <p>Lịch học: Tối 3-5-7</p>
+                  </div>
+                </div>
+              </div>
+              <div class="schooling_list-course">
+                <div class="schooling_course-item">
+                  <a href="#">
+                    <img
+                      src="https://iviettech.vn/wp-content/uploads/2020/06/BA-Course-icon.png"
+                      alt=""
+                      class="schooling-img"
+                    />
+                  </a>
+
+                  <div class="schooling_desc">
+                    <p>
+                      <a href="#" class="schooling_desc-link"
+                        >Phân tích nghiệp vụ (BA)</a
+                      >
+                    </p>
+                    <p>Ngày khai giảng: 11-04-2022</p>
+                    <p>Lịch học: Tối 2-4-6</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="list-course_wrapp">
+              <div class="schooling_list-course">
+                <div class="schooling_course-item">
+                  <a href="#">
+                    <img
+                      src="https://iviettech.vn/wp-content/uploads/2017/05/Front-End-Developer.png"
+                      alt=""
+                      class="schooling-img"
+                    />
+                  </a>
+
+                  <div class="schooling_desc">
+                    <p>
+                      <a href="#" class="schooling_desc-link"
+                        >Lập trình Front-End</a
+                      >
+                    </p>
+                    <p>Ngày khai giảng: 17-03-2022</p>
+                    <p>Lịch học: Tối 3-5-7</p>
+                  </div>
+                </div>
+              </div>
+              <div class="schooling_list-course">
+                <div class="schooling_course-item">
+                  <a href="#">
+                    <img
+                      src="https://iviettech.vn/wp-content/uploads/2013/12/Khoa-hoc-lap-trinh-PHP-Laravel.jpg"
+                      alt=""
+                      class="schooling-img"
+                    />
+                  </a>
+
+                  <div class="schooling_desc">
+                    <p>
+                      <a href="#" class="schooling_desc-link"
+                        >Lập trình web với PHP & Laravel</a
+                      >
+                    </p>
+                    <p>Ngày khai giảng: 22-03-2022</p>
+                    <p>Lịch học: Tối: 3-5-7</p>
+                  </div>
+                </div>
+              </div>
+              <div class="schooling_list-course">
+                <div class="schooling_course-item">
+                  <a href="#">
+                    <img
+                      src="https://iviettech.vn/wp-content/uploads/2015/12/Java_logo.jpg"
+                      alt=""
+                      class="schooling-img"
+                    />
+                  </a>
+
+                  <div class="schooling_desc">
+                    <p>
+                      <a href="#" class="schooling_desc-link"
+                        >Lập trình Java từ A-Z</a
+                      >
+                    </p>
+                    <p>Ngày khai giảng: 11-04-2022</p>
+                    <p>Lịch học: Tối: 2-4-6</p>
+                  </div>
+                </div>
+              </div>
+              <div class="schooling_list-course">
+                <div class="schooling_course-item">
+                  <a href="#">
+                    <img
+                      src="https://iviettech.vn/wp-content/uploads/2015/12/ios_logo.jpg"
+                      alt=""
+                      class="schooling-img"
+                    />
+                  </a>
+
+                  <div class="schooling_desc">
+                    <p>
+                      <a href="#" class="schooling_desc-link"
+                        >Lập trình iOS – Swift</a
+                      >
+                    </p>
+                    <p>Ngày khai giảng: 18-04-2022</p>
+                    <p>Lịch học: Tối 2-4-6</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dashed">
+          <div class="dashed-header">
+            <div class="session-header schooling-header">
+              <a href="#" class="schooling-link">
+                <span class="icon-wrapp">
+                  <i class="icon">
+                    <ion-icon name="clipboard-outline"></ion-icon>
+                  </i>
+                </span>
+                <h2 class="session-title">Các khoá khác</h2>
+              </a>
+              <div class="control-course">
+                <span class="courst-move dashed-prev">
+                  <i class="fa-solid fa-angle-left"></i>
+                </span>
+                <span class="courst-move dashed-next">
+                  <i class="fa-solid fa-angle-right"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="dashed-content">
+            <div class="list-course_wrapp dashed-list-course_wrapp">
+              <!-- <div class="schooling_list-course dashed-course">
+                <div class="schooling_course-item">
+                  <a href="#">
+                    <img
+                      src="https://iviettech.vn/wp-content/uploads/2015/12/c_logo.png"
+                      alt=""
+                      class="schooling-img"
+                    />
+                  </a>
+
+                  <div class="schooling_desc">
+                    <p>
+                      <a href="#" class="schooling_desc-link"
+                        >Lập trình cơ bản</a
+                      >
+                    </p>
+                    <p>Ngày khai giảng: 29-03</p>
+                    <p>Thời gian: 1 tháng</p>
+                    <p>Suất học: Tối: 3-5-7</p>
+                  </div>
+                </div>
+              </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="news-event">
+        <div class="new-event_wrapp">
+          <div class="speacial">
+            <div class="session-header event-header">
+              <a href="#" class="event-link">
+                <span class="icon-wrapp new-icon">
+                  <i class="icon">
+                    <ion-icon name="newspaper-outline"></ion-icon>
+                  </i>
+                </span>
+                <div class="event-link-wrapp">
+                  <h2 class="session-title event-title">Tin tức & sự kiện</h2>
+                  <p>Tin Tức Chuyên Ngành</p>
+                </div>
+              </a>
+            </div>
+
+            <div class="new-intro">
+              <a href="" class="new-intro_link">
+                <img
+                  src="https://iviettech.vn/wp-content/uploads/2022/02/iViettech-Banner-bai-viet.jpg"
+                  alt=""
+                  class="new-intro__img"
+                />
+              </a>
+
+              <div class="new-intro__desc-wrapp">
+                <h2 class="new-intro__title">
+                  Kỷ niệm 8 năm thành lập iViettech, giảm đến 10% học phí toàn
+                  khóa học
+                </h2>
+
+                <div class="new-title__time">
+                  <i><ion-icon name="time-outline"></ion-icon></i>
+                  <p>Thứ Hai, 07/02/2022</p>
+                </div>
+
+                <p class="new-intro__desc-text">
+                  iViettech – đào tạo và cam kết hỗ trợ việc làm, sẽ giúp bạn có
+                  được việc làm tốt, mức lương cao trong ngành phần mềm. Khi
+                  tham gia...
+                </p>
+              </div>
+            </div>
+            <div class="btn-wapp">
+              <a href="#" class="btn bt-new">Xem thêm</a>
+            </div>
+
+            <div class="news-upcoming__course">
+              <div class="session-header event-header">
+                <a href="#" class="event-link">
+                  <div class="event-link-wrapp">
+                    <h2 class="session-title event-title">Tin Tức đã đưa</h2>
+                  </div>
+                </a>
+              </div>
+              <div class="list-new">
+                <div class="new_list-course">
+                  <div class="session_course-item">
+                    <a href="#">
+                      <img
+                        src="https://iviettech.vn/wp-content/uploads/2021/12/Node_logo.png"
+                        alt=""
+                        class="session_img"
+                      />
+                    </a>
+
+                    <div class="session_desc">
+                      <p>
+                        <a href="#" class="session_desc-link"
+                          >Ra mắt khoá học mới Nodejs</a
+                        >
+                      </p>
+                      <div class="new-title__time">
+                        <i><ion-icon name="time-outline"></ion-icon></i>
+                        <p>Thứ Hai, 24/01/2022</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="session_course-item">
+                    <a href="#">
+                      <img
+                        src="https://iviettech.vn/wp-content/uploads/2022/01/Xu-huong-cong-nghe-lap-trinh-2022-Logo.png"
+                        alt=""
+                        class="session_img"
+                      />
+                    </a>
+
+                    <div class="session_desc">
+                      <p>
+                        <a href="#" class="session_desc-link"
+                          >Xu hướng công nghệ lập trình 2022</a
+                        >
+                      </p>
+                      <div class="new-title__time">
+                        <i><ion-icon name="time-outline"></ion-icon></i>
+                        <p>Chủ Nhật, 09/01/2022</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="news-upcoming__course new-quote">
+                <div class="session-header event-header">
+                  <a href="#" class="event-link">
+                    <div class="event-link-wrapp">
+                      <h2 class="session-title event-title">
+                        Học Viên nói Về trung tâm !
+                      </h2>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+             <div class="blook_quote-wrapp-parent-parent">
+               <div class="blook_quote-wrapp-parent">
+                 <div class="blook_quote-wrapp">
+                   <!-- ---- -->
+                 </div>
+               </div>
+             </div>
+
+              <div class="list-alimni">
+                <div class="avata-quote avata-quote_alimi" data-member="0">
+                  <img
+                    src="https://images.unsplash.com/photo-1484399172022-72a90b12e3c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGJldXRpZnVsbCUyMGdpcmwlMjBhdmF0YXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+                    alt=""
+                    class="avata-quote_member avata-alimni"
+                  />
+                </div>
+                <div class="avata-quote avata-quote_alimi" data-member="1">
+                  <img
+                    src="https://iviettech.vn/wp-content/uploads/2021/05/Hong_son-updated.png"
+                    alt=""
+                    class="avata-quote_member avata-alimni"
+                  />
+                </div>
+                <div class="avata-quote avata-quote_alimi" data-member="2">
+                  <img
+                    src="https://iviettech.vn/wp-content/uploads/2021/05/Thao-Truong-1.jpg"
+                    alt=""
+                    class="avata-quote_member avata-alimni"
+                  />
+                </div>
+                <div class="avata-quote avata-quote_alimi" data-member="3">
+                  <img
+                    src="https://iviettech.vn/wp-content/uploads/2021/05/Hau-Huynh-2.png"
+                    alt=""
+                    class="avata-quote_member avata-alimni"
+                  />
+                </div>
+                <div class="avata-quote avata-quote_alimi" data-member="4">
+                  <img
+                    src="https://images.unsplash.com/photo-1504439904031-93ded9f93e4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzR8fGJldXRpZnVsbCUyMGdpcmwlMjBhdmF0YXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+                    alt=""
+                    class="avata-quote_member avata-alimni"
+                  />
+                </div>
+                <div class="avata-quote avata-quote_alimi" data-member="5">
+                  <img
+                    src="https://iviettech.vn/wp-content/uploads/2020/12/Thien-1.png"
+                    alt=""
+                    class="avata-quote_member avata-alimni"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="new-Recruitment">
+            <div class="new-Recruitment__wrapp">
+              <div class="session-header event-header">
+                <a href="#" class="event-link">
+                  <span class="icon-wrapp new-icon">
+                    <i class="fa-solid fa-magnifying-glass-dollar icon"></i>
+                  </span>
+                  <div class="event-link-wrapp">
+                    <h2 class="session-title event-title">Tin tuyển dụng</h2>
+                    <p>Việc tìm người - Người tìm việc</p>
+                  </div>
+                </a>
+              </div>
+
+              <div class="recruitment-list">
+                <div class="session_course-item recruitment-company">
+                  <a href="#">
+                    <img
+                      src="https://iviettech.vn/wp-content/uploads/2016/05/vieclam3.jpg"
+                      alt=""
+                      class="session_img  company-img"
+                    />
+                  </a>
+
+                  <div class="session_desc recruitment-company">
+                    <p class="session_desc recruitment-desc">
+                      <p class="
+                      company-name">Công ty : FSOFT DANANG</p>
+
+                      <a href="#" class="session_desc-link recruitment-link"
+                        >tìm Fresher (TIẾNG ANH TỐT + Base IT) (đào tạo 1-2
+                        tháng)
+                      </a>
+                    </p>
+                    <div class="new-title__time recruitment-time">
+                      <i><ion-icon name="time-outline"></ion-icon></i>
+                      <p>Thứ Hai, 24/01/2022</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="recruitment-list">
+                <div class="session_course-item recruitment-company">
+                  <a href="#">
+                    <img
+                      src="https://iviettech.vn/wp-content/uploads/2016/05/vieclam5.jpg"
+                      alt=""
+                      class="session_img  company-img"
+                    />
+                  </a>
+
+                  <div class="session_desc recruitment-company">
+                    <p class="session_desc recruitment-desc">
+                      <p class="
+                      company-name">Công ty : VNEXT Đà Nẵng</p>
+
+                      <a href="#" class="session_desc-link recruitment-link"
+                        >Tuyển dụng Junior Full-stack Developer – Lương Upto 20M Gross
+                      </a>
+                    </p>
+                    <div class="new-title__time recruitment-time">
+                      <i><ion-icon name="time-outline"></ion-icon></i>
+                      <p>Thứ Hai, 24/01/2022</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="recruitment-list">
+                <div class="session_course-item recruitment-company">
+                  <a href="#">
+                    <img
+                      src="https://iviettech.vn/wp-content/uploads/2016/05/vieclam4.jpg"
+                      alt=""
+                      class="session_img  company-img"
+                    />
+                  </a>
+
+                  <div class="session_desc recruitment-company">
+                    <p class="session_desc recruitment-desc">
+                      <p class="
+                      company-name">Công ty : CÔNG TY ĐÀ NẴNG WEB</p>
+
+                      <a href="#" class="session_desc-link recruitment-link"
+                        >TUYỂN THỰC TẬP SINH PHP – ĐI LÀM DỰ ÁN THỰC TẾ NGAY
+                      </a>
+                    </p>
+                    <div class="new-title__time recruitment-time">
+                      <i><ion-icon name="time-outline"></ion-icon></i>
+                      <p>Thứ Ba, 13/07/2021</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="recruitment-list">
+                <div class="session_course-item recruitment-company">
+                  <a href="#">
+                    <img
+                      src="https://iviettech.vn/wp-content/uploads/2016/05/vieclam6.jpg"
+                      alt=""
+                      class="session_img  company-img"
+                    />
+                  </a>
+
+                  <div class="session_desc recruitment-company">
+                    <p class="session_desc recruitment-desc">
+                      <p class="
+                      company-name">Công ty : AB TEAM</p>
+
+                      <a href="#" class="session_desc-link recruitment-link"
+                        >Tuyển Frontend & Backend
+                      </a>
+                    </p>
+                    <div class="new-title__time recruitment-time">
+                      <i><ion-icon name="time-outline"></ion-icon></i>
+                      <p>hứ Ba, 13/07/2021</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="recruitment-list">
+                <div class="session_course-item recruitment-company">
+                  <a href="#">
+                    <img
+                      src="https://iviettech.vn/wp-content/uploads/2016/05/vieclam7.jpg"
+                      alt=""
+                      class="session_img  company-img"
+                    />
+                  </a>
+
+                  <div class="session_desc recruitment-company">
+                    <p class="session_desc recruitment-desc">
+                      <p class="
+                      company-name">Công ty : Madison Technologies VN</p>
+
+                      <a href="#" class="session_desc-link recruitment-link"
+                        >Tuyển FE & BE (INTERNS)
+                      </a>
+                    </p>
+                    <div class="new-title__time recruitment-time">
+                      <i><ion-icon name="time-outline"></ion-icon></i>
+                      <p>Thứ Ba, 13/07/2021</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            <div class="employer-wrapp">
+              <div class="new-Recruitment__wrapp">
+                <div class="session-header event-header">
+                  <a href="#" class="event-link">
+                    <span class="icon-wrapp new-icon">
+                      <i class="fa-solid fa-magnifying-glass-dollar icon"></i>
+                    </span>
+                    <div class="event-link-wrapp">
+                      <h2 class="session-title event-title">Tin tuyển dụng</h2>
+                      <p>Việc tìm người - Người tìm việc</p>
+                    </div>
+                  </a>
+                </div>
+  
+                <div class="recruitment-list">
+                  <div class="session_course-item recruitment-company">
+                    <a href="#">
+                      <img
+                        src="https://iviettech.vn/wp-content/uploads/2018/09/formos_logo_white.png"
+                        alt=""
+                        class="session_img  employer-img content_news-img"
+                      />
+                    </a>
+  
+                    <div class="session_desc recruitment-company">
+                      <p class="session_desc recruitment-desc">
+                        <a href="#" class="session_desc-link recruitment-link"
+                          >CÔNG TY PHẦN MỀM FORMOS
+                        </a>
+                      </p>
+                      <div class="new-title__time recruitment-time company-time">
+                        <p>http://formos.com/ About Formos Founded in 2002, Formos delivers SaaS product development, mobile applications, and process management solutions. We have a ...</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="recruitment-list">
+                  <div class="session_course-item recruitment-company">
+                    <a href="#">
+                      <img
+                        src="https://iviettech.vn/wp-content/uploads/2017/09/mozartsoft.png"
+                        alt=""
+                        class="session_img  company-img employer-img content_news-img"
+                      />
+                    </a>
+  
+                    <div class="session_desc recruitment-company">
+                      <p class="session_desc recruitment-desc">
+                        <a href="#" class="session_desc-link recruitment-link"
+                          >Công ty TNHH MoziaSoft
+                        </a>
+                      </p>
+                      <div class="new-title__time recruitment-time"company-time>
+                        <p>Tên công ty Công ty TNHH MoziaSoft Ngày thành lập 9/2016 Địa chỉ SUNRISE BUILDING số 25 đường 2/9 Đà ...</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="recruitment-list">
+                  <div class="session_course-item recruitment-company">
+                    <a href="#">
+                      <img
+                        src="https://iviettech.vn/wp-content/uploads/2017/08/Naivo.png"
+                        alt=""
+                        class="session_img  company-img content_news-img"
+                      />
+                    </a>
+  
+                    <div class="session_desc recruitment-company">
+                      <p class="session_desc recruitment-desc">
+                      <a href="#" class="session_desc-link recruitment-link"
+                          >NovaIO Tech
+                        </a>
+                      </p>
+                      <div class="new-title__time recruitment-time"company-time>
+                        <p>Email: info@novaio.vn http://novaio.vn Liên hệ: 0905 531 717 (Mr Nhi)/ 0936 796 346 (Ms Oanh). Lô B, Tầng 10, Công ...</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="recruitment-list">
+                  <div class="session_course-item recruitment-company">
+                    <a href="#">
+                      <img
+                        src="https://iviettech.vn/wp-content/uploads/2017/07/Blue-Otter.jpg"
+                        alt=""
+                        class="session_img  company-img content_news-img"
+                      />
+                    </a>
+  
+                    <div class="session_desc recruitment-company">
+                      <p class="session_desc recruitment-desc">
+                        <a href="#" class="session_desc-link recruitment-link"
+                          >Công Ty Blue Otter Corporation – Blue Otter Representative Office in Da Nang
+                        </a>
+                      </p>
+                      <div class="new-title__time recruitment-time"company-time>
+                        <p>– Lĩnh vực hoạt động: + Bảo đảm chất lượng phần mềm thông qua kiểm tra manual và tự động ...</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div class="footer-wapper">
+          <div class="footer-contact">
+            <p class="footer-address">Địa chỉ : 92 Quang Trung, Q. Hải Châu, TP. Đà Nẵng - Điện thoại : 02363 888 279</p>
+            <p class="email">Email : manhquan.05012002@gmail.com</p>
+          </div>
+  
+          <div class="footer-coppyright">
+            <p class="coppyright">Bản quyền thuộc về Mquan</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-1.11.0.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+
+    <script src="./Asset/js/app.js"></script>
+
+  </body>
+</html>
